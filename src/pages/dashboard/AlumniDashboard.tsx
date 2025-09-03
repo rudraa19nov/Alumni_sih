@@ -10,6 +10,8 @@ import {
   DollarSign, 
   // TrendingUp, 
   Award,
+  Building,
+  Medal,
   Heart,
   ExternalLink
 } from 'lucide-react';
@@ -238,14 +240,61 @@ const AlumniDashboard: React.FC = () => {
               to="/alumni"
               className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-emerald-50 hover:border-emerald-300 transition-all"
             >
-              <div className="bg-emerald-100 p-2 rounded-lg">
-                <Award className="h-5 w-5 text-emerald-600" />
+              <div className="bg-blue-100 p-2 rounded-lg">
+               <Award className="h-5 w-5 text-blue-600" />
               </div>
               <div>
                 <h3 className="font-medium text-gray-900">Browse Alumni</h3>
                 <p className="text-sm text-gray-600">Connect with fellow graduates</p>
               </div>
             </Link>
+
+             <Link
+              to="/success"
+              className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-emerald-50 hover:border-emerald-300 transition-all"
+            >
+              <div className="bg-emerald-100 p-2 rounded-lg">
+               <Medal className="h-5 w-5 text-emerald-600" />
+              </div>
+              <div>
+                <h3 className="font-medium text-gray-900">Success Stories</h3>
+                <p className="text-sm text-gray-600">Journey that inspires you</p>
+              </div>
+            </Link>
+
+               <Link
+              to="/feedback"
+              className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-emerald-50 hover:border-emerald-300 transition-all"
+            >
+              <div className="bg-emerald-100 p-2 rounded-lg">
+              <MessageCircle className="h-5 w-5 text-emerald-600" />
+              </div>
+              <div>
+                <h3 className="font-medium text-gray-900">Feedback</h3>
+                <p className="text-sm text-gray-600">Give you favorable feedback</p>
+              </div>
+            </Link>
+
+          </div>
+        </div>
+            {/* Additional */}
+        <div className="mt-8 bg-white rounded-xl shadow-md p-6">
+          <h2 className="text-xl font-semibold text-gray-900 mb-6">Additional Features</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <Link
+              to="/job"
+              className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-emerald-50 hover:border-emerald-300 transition-all"
+            >
+              <div className="bg-blue-100 p-2 rounded-lg">
+                <Building className="h-5 w-5 text-blue-600" />
+              </div>
+              <div>
+                <h3 className="font-medium text-gray-900">Job & Internship Portal</h3>
+                <p className="text-sm text-gray-600">Discover exclusive jobs, internships, and alumni referrals.</p>
+              </div>
+            </Link>
+
+
           </div>
         </div>
       </div>

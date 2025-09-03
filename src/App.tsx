@@ -17,6 +17,10 @@ import ProfilePage from './pages/profile/ProfilePage';
 import EventsPage from './pages/events/EventsPage';
 import MentorshipPage from './pages/mentorship/MentorshipPage';
 import DonationsPage from './pages/donations/DonationsPage';
+import RewardBadges from './pages/reward/rewardBadges';
+import Success from './pages/success/Success'
+import Feedback from './pages/feedback/Feedback';
+import JobIntern from './pages/job/JobIntern';
 
 const AppRoutes: React.FC = () => {
   const { isAuthenticated, isLoading } = useAuth();
@@ -89,6 +93,40 @@ const AppRoutes: React.FC = () => {
           element={
             <ProtectedRoute allowedRoles={['alumni', 'admin']}>
               <DonationsPage />
+            </ProtectedRoute>
+          }
+        />
+         <Route
+          path="/reward"
+          element={
+            <ProtectedRoute allowedRoles={['alumni', 'admin']}>
+              < RewardBadges/>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/success"
+          element={
+            <ProtectedRoute allowedRoles={['alumni', 'admin']}>
+              < Success/>
+            </ProtectedRoute>
+          }
+        />
+         <Route
+          path="/feedback"
+          element={
+            <ProtectedRoute allowedRoles={['alumni', 'admin']}>
+              < Feedback/>
+            </ProtectedRoute>
+          }
+        />
+
+         <Route
+          path="/job"
+          element={
+            <ProtectedRoute allowedRoles={['alumni', 'admin']}>
+              < JobIntern/>
             </ProtectedRoute>
           }
         />
