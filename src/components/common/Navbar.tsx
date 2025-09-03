@@ -11,7 +11,8 @@ import {
   Calendar, 
   Heart, 
   DollarSign,
-  Settings
+  Settings,
+  Award // Added Award icon for Rewards
 } from 'lucide-react';
 
 const Navbar: React.FC = () => {
@@ -28,19 +29,19 @@ const Navbar: React.FC = () => {
     if (!user) return [];
 
     const commonItems = [
-      { label: 'Dashboard', path: '/dashboard', icon: Settings },
+      // { label: 'Dashboard', path: '/dashboard', icon: Settings },
       { label: 'Alumni Directory', path: '/alumni', icon: Users },
+      { label: 'Rewards & Badges', path: '/reward', icon: Award }, 
       { label: 'Events', path: '/events', icon: Calendar },
-      { label: 'Profile', path: '/profile', icon: User }
+      { label: 'Mentorship', path: '/mentorship', icon: Heart } // Moved Mentorship to Profile's position
     ];
 
-    if (user.role === 'student' || user.role === 'alumni') {
-      commonItems.splice(3, 0, { label: 'Mentorship', path: '/mentorship', icon: Heart });
+    if (user.role === 'alumni' || user.role === 'admin') {
+      commonItems.push({ label: 'Donations', path: '/donations', icon: DollarSign }); // Moved Donations to Mentorship's position
     }
 
-    if (user.role === 'alumni' || user.role === 'admin') {
-      commonItems.push({ label: 'Donations', path: '/donations', icon: DollarSign });
-    }
+    // Add Profile at the end (taking Donations' position)
+    commonItems.push({ label: 'Profile', path: '/profile', icon: User });
 
     return commonItems;
   };
@@ -55,7 +56,7 @@ const Navbar: React.FC = () => {
             <div className="flex items-center">
               <Link to="/" className="flex items-center space-x-2">
                 <GraduationCap className="h-8 w-8 text-blue-600" />
-                <span className="text-xl font-bold text-gray-900">AlumniConnect</span>
+                <span className="text-xl font-bold text-gray-900">AlumniHub</span>
               </Link>
             </div>
             <div className="flex items-center space-x-4">
@@ -85,13 +86,13 @@ const Navbar: React.FC = () => {
           {/* Logo and brand */}
           <div className="flex items-center">
             <Link to="/dashboard" className="flex items-center space-x-2">
-              <GraduationCap className="h-8 w-8 text-blue-600" />
-              <span className="text-xl font-bold text-gray-900">AlumniConnect</span>
+              <GraduationCap className="h-8 w-8 text-blue-600 "  />
+              <span className="text-xl font-bold text-gray-900">AlumniHub</span>
             </Link>
           </div>
 
           {/* Desktop navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className=" ml-10 hidden md:flex items-center space-x-8">
             {navigationItems.map((item) => {
               const Icon = item.icon;
               return (
