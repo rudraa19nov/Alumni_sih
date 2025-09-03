@@ -293,7 +293,30 @@ const AlumniDashboard: React.FC = () => {
                 <p className="text-sm text-gray-600">Discover exclusive jobs, internships, and alumni referrals.</p>
               </div>
             </Link>
-
+             <Link
+              to="/analytic"
+              className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-emerald-50 hover:border-emerald-300 transition-all"
+            >
+              <div className="bg-blue-100 p-2 rounded-lg">
+                <Building className="h-5 w-5 text-blue-600" />
+              </div>
+              <div>
+                <h3 className="font-medium text-gray-900">Analytics & Insights</h3>
+                <p className="text-sm text-gray-600">View Analytics & Insights</p>
+              </div>
+            </Link>
+             <Link
+              to="/message"
+              className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-emerald-50 hover:border-emerald-300 transition-all"
+            >
+              <div className="bg-blue-100 p-2 rounded-lg">
+                <MessageCircle className="h-5 w-5 text-green-600" />
+              </div>
+              <div>
+                <h3 className="font-medium text-gray-900">Message</h3>
+                <p className="text-sm text-gray-600">One to One and Group Chat</p>
+              </div>
+            </Link>
 
           </div>
         </div>

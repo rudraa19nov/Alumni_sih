@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Navbar from './components/common/Navbar';
 import ProtectedRoute from './components/common/ProtectedRoute';
+import Chatbot from './components/Chatbot/Chatbot';
 
 // Auth pages
 import Login from './pages/auth/Login';
@@ -21,6 +22,8 @@ import RewardBadges from './pages/reward/rewardBadges';
 import Success from './pages/success/Success'
 import Feedback from './pages/feedback/Feedback';
 import JobIntern from './pages/job/JobIntern';
+import AnalyticsDashboard from './pages/analytic/Analytic';
+import Message from './pages/message/Message';
 
 const AppRoutes: React.FC = () => {
   const { isAuthenticated, isLoading } = useAuth();
@@ -121,12 +124,28 @@ const AppRoutes: React.FC = () => {
             </ProtectedRoute>
           }
         />
+         <Route
+          path="/analytic"
+          element={
+            <ProtectedRoute allowedRoles={['alumni', 'admin']}>
+              < AnalyticsDashboard/>
+            </ProtectedRoute>
+          }
+        />
 
          <Route
           path="/job"
           element={
             <ProtectedRoute allowedRoles={['alumni', 'admin']}>
               < JobIntern/>
+            </ProtectedRoute>
+          }
+        />
+         <Route
+          path="/message"
+          element={
+            <ProtectedRoute allowedRoles={['alumni', 'admin']}>
+              < Message/>
             </ProtectedRoute>
           }
         />
@@ -147,11 +166,14 @@ const AppRoutes: React.FC = () => {
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
-        <AppRoutes />
-      </Router>
-    </AuthProvider>
+    <>
+      <AuthProvider>
+        <Router>
+          <AppRoutes />
+        </Router>
+      </AuthProvider>
+      <Chatbot />
+    </>
   );
 }
 
