@@ -24,6 +24,7 @@ import Feedback from './pages/feedback/Feedback';
 import JobIntern from './pages/job/JobIntern';
 import AnalyticsDashboard from './pages/analytic/Analytic';
 import Message from './pages/message/Message';
+import Linked from './pages/linked/LinkedIn';
 
 const AppRoutes: React.FC = () => {
   const { isAuthenticated, isLoading } = useAuth();
@@ -138,6 +139,14 @@ const AppRoutes: React.FC = () => {
           element={
             <ProtectedRoute allowedRoles={['alumni', 'admin']}>
               < JobIntern/>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/linked"
+          element={
+            <ProtectedRoute allowedRoles={['alumni', 'admin']}>
+              < Linked/>
             </ProtectedRoute>
           }
         />

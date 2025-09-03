@@ -11,9 +11,12 @@ import {
   // TrendingUp, 
   Award,
   Building,
+  BarChart,
   Medal,
   Heart,
-  ExternalLink
+  MessageSquare,
+  ExternalLink,
+  Linkedin 
 } from 'lucide-react';
 import { eventsAPI, mentorshipAPI, donationsAPI } from '../../utils/api';
 import { Event, MentorshipRequest, Donation } from '../../types';
@@ -238,7 +241,7 @@ const AlumniDashboard: React.FC = () => {
 
             <Link
               to="/alumni"
-              className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-emerald-50 hover:border-emerald-300 transition-all"
+              className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-blue-50 hover:border-blue-300 transition-all"
             >
               <div className="bg-blue-100 p-2 rounded-lg">
                <Award className="h-5 w-5 text-blue-600" />
@@ -261,13 +264,25 @@ const AlumniDashboard: React.FC = () => {
                 <p className="text-sm text-gray-600">Journey that inspires you</p>
               </div>
             </Link>
+                  <Link
+              to="/linked"
+              className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-blue-50 hover:border-blue-300 transition-all"
+            >
+              <div className="bg-blue-100 p-2 rounded-lg">
+              <Linkedin  className="h-5 w-5 text-blue-600" />
+              </div>
+              <div>
+                <h3 className="font-medium text-gray-900">LinkedIn</h3>
+                <p className="text-sm text-gray-600">Connect more closely with LinkedIn</p>
+              </div>
+            </Link>
 
                <Link
               to="/feedback"
-              className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-emerald-50 hover:border-emerald-300 transition-all"
+              className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-pink-50 hover:border-pink-300 transition-all"
             >
-              <div className="bg-emerald-100 p-2 rounded-lg">
-              <MessageCircle className="h-5 w-5 text-emerald-600" />
+              <div className="bg-pink-100 p-2 rounded-lg">
+              <MessageSquare className="h-5 w-5 text-pink-600" />
               </div>
               <div>
                 <h3 className="font-medium text-gray-900">Feedback</h3>
@@ -283,10 +298,10 @@ const AlumniDashboard: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <Link
               to="/job"
-              className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-emerald-50 hover:border-emerald-300 transition-all"
+              className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-purple-50 hover:border-purple-300 transition-all"
             >
-              <div className="bg-blue-100 p-2 rounded-lg">
-                <Building className="h-5 w-5 text-blue-600" />
+              <div className="bg-purple-100 p-2 rounded-lg">
+                <Building className="h-5 w-5 text-purple-600" />
               </div>
               <div>
                 <h3 className="font-medium text-gray-900">Job & Internship Portal</h3>
@@ -297,8 +312,8 @@ const AlumniDashboard: React.FC = () => {
               to="/analytic"
               className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-emerald-50 hover:border-emerald-300 transition-all"
             >
-              <div className="bg-blue-100 p-2 rounded-lg">
-                <Building className="h-5 w-5 text-blue-600" />
+              <div className="bg-green-100 p-2 rounded-lg">
+                <BarChart className="h-5 w-5 text-green-600" />
               </div>
               <div>
                 <h3 className="font-medium text-gray-900">Analytics & Insights</h3>
@@ -307,10 +322,10 @@ const AlumniDashboard: React.FC = () => {
             </Link>
              <Link
               to="/message"
-              className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-emerald-50 hover:border-emerald-300 transition-all"
+              className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-orange-50 hover:border-orange-300 transition-all"
             >
-              <div className="bg-blue-100 p-2 rounded-lg">
-                <MessageCircle className="h-5 w-5 text-green-600" />
+              <div className="bg-orange-100 p-2 rounded-lg">
+                <MessageCircle className="h-5 w-5 text-orange-600" />
               </div>
               <div>
                 <h3 className="font-medium text-gray-900">Message</h3>
