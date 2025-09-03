@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Navbar from './components/common/Navbar';
 import ProtectedRoute from './components/common/ProtectedRoute';
+import Chatbot from './components/Chatbot/Chatbot';
 
 // Auth pages
 import Login from './pages/auth/Login';
@@ -17,6 +18,7 @@ import ProfilePage from './pages/profile/ProfilePage';
 import EventsPage from './pages/events/EventsPage';
 import MentorshipPage from './pages/mentorship/MentorshipPage';
 import DonationsPage from './pages/donations/DonationsPage';
+import GroupChat from './pages/groupchat/oneToOne';
 
 const AppRoutes: React.FC = () => {
   const { isAuthenticated, isLoading } = useAuth();
@@ -85,6 +87,14 @@ const AppRoutes: React.FC = () => {
           }
         />
         <Route
+          path="/oneToOne"
+          element={
+            <ProtectedRoute allowedRoles={['student', 'alumni']}>
+              <GroupChat />
+            </ProtectedRoute>
+          }
+        />
+        <Route
           path="/donations"
           element={
             <ProtectedRoute allowedRoles={['alumni', 'admin']}>
@@ -109,12 +119,16 @@ const AppRoutes: React.FC = () => {
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
-        <AppRoutes />
-      </Router>
-    </AuthProvider>
+    <>
+      <AuthProvider>
+        <Router>
+          <AppRoutes />
+        </Router>
+      </AuthProvider>
+      <Chatbot />
+    </>
   );
+
 }
 
 export default App;

@@ -3,11 +3,11 @@ import { useAuth } from '../../context/AuthContext';
 import { Link } from 'react-router-dom';
 
 
-import { 
-  Users, 
-  Calendar, 
-  MessageCircle, 
-  DollarSign, 
+import {
+  Users,
+  Calendar,
+  MessageCircle,
+  DollarSign,
   // TrendingUp, 
   Award,
   Heart,
@@ -185,9 +185,9 @@ const AlumniDashboard: React.FC = () => {
                   <div className="flex items-center justify-between">
                     <span className={`
                       px-2 py-1 rounded-full text-xs font-medium capitalize
-                      ${request.status === 'pending' ? 'bg-yellow-100 text-yellow-700' : 
-                        request.status === 'approved' ? 'bg-emerald-100 text-emerald-700' : 
-                        'bg-gray-100 text-gray-700'}
+                      ${request.status === 'pending' ? 'bg-yellow-100 text-yellow-700' :
+                        request.status === 'approved' ? 'bg-emerald-100 text-emerald-700' :
+                          'bg-gray-100 text-gray-700'}
                     `}>
                       {request.status}
                     </span>
@@ -244,6 +244,30 @@ const AlumniDashboard: React.FC = () => {
               <div>
                 <h3 className="font-medium text-gray-900">Browse Alumni</h3>
                 <p className="text-sm text-gray-600">Connect with fellow graduates</p>
+              </div>
+            </Link>
+            <Link
+              to="/oneToOne"
+              className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-emerald-50 hover:border-emerald-300 transition-all"
+            >
+              <div className="bg-emerald-100 p-2 rounded-lg">
+                <Award className="h-5 w-5 text-emerald-600" />
+              </div>
+              <div>
+                <h3 className="font-medium text-gray-900">Group Chat</h3>
+                <p className="text-sm text-gray-600">One to One and Goup chat</p>
+              </div>
+            </Link>
+            <Link
+              to="/Chatbot"
+              className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-purple-50 hover:border-purple-300 transition-all"
+            >
+              <div className="bg-purple-100 p-2 rounded-lg">
+                <DollarSign className="h-5 w-5 text-purple-600" />
+              </div>
+              <div>
+                <h3 className="font-medium text-gray-900">Chatbot</h3>
+                <p className="text-sm text-gray-600">Ask your doubts</p>
               </div>
             </Link>
           </div>
