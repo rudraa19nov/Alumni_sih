@@ -332,6 +332,18 @@ const AlumniDashboard: React.FC = () => {
                 <p className="text-sm text-gray-600">One to One and Group Chat</p>
               </div>
             </Link>
+            <Link
+              to="/reward"
+              className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:bg-red-50 hover:border-red-300 transition-all"
+            >
+              <div className="bg-red-100 p-2 rounded-lg">
+                <Award className="h-5 w-5 text-red-600" />
+              </div>
+              <div>
+                <h3 className="font-medium text-gray-900">Rewards & Badges</h3>
+                <p className="text-sm text-gray-600">Earn more rewards</p>
+              </div>
+            </Link>
 
           </div>
         </div>

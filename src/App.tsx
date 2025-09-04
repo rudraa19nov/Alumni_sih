@@ -4,7 +4,7 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import Navbar from './components/common/Navbar';
 import ProtectedRoute from './components/common/ProtectedRoute';
 import Chatbot from './components/Chatbot/Chatbot';
-
+import ScrollToTop from "./components/common/ScrollToTop";
 // Auth pages
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
@@ -40,6 +40,7 @@ const AppRoutes: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
+        <ScrollToTop /> 
       <Routes>
         {/* Public routes */}
         <Route 
