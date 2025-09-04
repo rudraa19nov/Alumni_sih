@@ -113,7 +113,7 @@ const Navbar: React.FC = () => {
               <input
                 type="text"
                 placeholder="Search alumni, events..."
-                className="block w-full pl-10 pr-3 py-2 bg-transparent border-0 focus:ring-0 text-sm"
+                className="block w-full pl-10 pr-3 py-2 bg-transparent border-0 focus:ring-0   focus:outline-none  text-sm"
                 onFocus={() => setIsSearchFocused(true)}
                 onBlur={() => setIsSearchFocused(false)}
               />
